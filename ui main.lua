@@ -1,3 +1,4 @@
+
 local StarHub = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -3317,3 +3318,46 @@ function StarHub:Window(text)
 	end
 	return ServerHold
 end
+
+_G.Color = Color3.fromRGB(255, 13, 90) ---Color
+
+local Star = StarHub:Window(" ")
+
+local StarServer = Star:Server("You Name",1) --ใส่idรูปได้
+
+local page1 = StarServer:Channel("Main")
+local page2 = StarServer:Channel("Main")
+
+page1:Label("This is just a label.")
+page1:Toggle("Toggle",false,function(t)
+print(t)
+end)
+
+page1:Button("Button",function(t)
+StarHub:Notification("Notification", "Max level!", "Okay!")
+end)
+page1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool)
+    print(bool)
+end)
+
+
+page1:Slider("Slide me!", 0, 1000, 400, function(t)
+print(t)
+end)
+
+page2:Label("This is just a label.")
+
+page2:Toggle("Toggle",false,function(t)
+print(t)
+end)
+
+page2:Button("Button",function(t)
+print(t)
+end)
+page2:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool)
+    print(bool)
+end)
+
+page2:Slider("Slide me!", 0, 1000, 400, function(t)
+print(t)
+end)
